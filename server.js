@@ -23,9 +23,12 @@ app.use('/api/user', userRoutes);
 // connect to db
 async function connectDB() {
   mongoose.set('strictQuery', false);
-  const result = await mongoose.connect(process.env.MONGO_URI, {
-    useNewUrlParser: true,
-  });
+  const result = await mongoose.connect(
+    'mongodb+srv://prabhaharan1392:prabhahar6@cluster0.rk0a7ad.mongodb.net/?retryWrites=true&w=majority',
+    {
+      useNewUrlParser: true,
+    }
+  );
   console.log('DB connected');
   return result;
 }
